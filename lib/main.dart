@@ -12,9 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Phoenix Parking Assist',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: ThemeData.dark(),
       home: MyHomePage(
         title: 'Phoenix Parking Assistant',
       ),
@@ -36,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
   bool _scanned = false;
 
   Future<void> scanQRCode() async {
-    final qrCode = await FlutterBarcodeScanner.scanBarcode(
+    final String qrCode = await FlutterBarcodeScanner.scanBarcode(
       'white',
       'Cancel',
       true,
@@ -49,14 +47,19 @@ class _MyHomePageState extends State<MyHomePage> {
       this.qrCode = qrCode;
       if (this._scanned)
         _scanned = false;
-      else
+      else if (qrCode.contains('assign_phoenix_code')) {
         _scanned = true;
-      print(qrCode);
+        showDetails(qrCode);
+      } else
+        print(qrCode);
     });
   }
 
-  void _show_details() {
-    print('details');
+  void showDetails(qrCode) {
+    // print(qrCode);
+    Navigator.push(context, MaterialPageRoute(builder: (context) {
+      return DetailsPage(qrCode: qrCode.toString());
+    }));
   }
 
   @override
@@ -67,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         body: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            // mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextButton(
                 onPressed: () => scanQRCode(),
@@ -85,7 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               Visibility(
                 child: ElevatedButton(
-                  onPressed: () => _show_details(),
+                  onPressed: () => showDetails(qrCode),
                   child: Text(
                     'Show parking details',
                     style: TextStyle(fontSize: 30),
