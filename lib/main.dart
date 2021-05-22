@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'page/details.dart';
+import 'widget/button_widget.dart';
 
 void main() {
   runApp(MyApp());
@@ -32,6 +33,12 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   String qrCode = '-infinity';
   bool _scanned = false;
+  final invalidQr = SnackBar(content: Text('Invalid QR Code. Try again...'));
+  final snackBar = SnackBar(
+      content: Text('Your car has been Unlocked. Have a safe journey.'));
+  final wrongQr = SnackBar(
+      content: Text(
+          'This is not the correct QR code. Scan the QR code of your parking spot.'));
 
   Future<void> scanQRCode() async {
     final String qrCode = await FlutterBarcodeScanner.scanBarcode(
@@ -44,14 +51,25 @@ class _MyHomePageState extends State<MyHomePage> {
     if (!mounted) return;
 
     setState(() {
-      this.qrCode = qrCode;
-      if (this._scanned)
-        _scanned = false;
-      else if (qrCode.contains('assign_phoenix_code')) {
-        _scanned = true;
-        showDetails(qrCode);
-      } else
-        print(qrCode);
+      if (!_scanned) {
+        if (qrCode.contains('assign_phoenix_code')) {
+          this.qrCode = qrCode;
+          _scanned = true;
+          showDetails(qrCode);
+        } else {
+          ScaffoldMessenger.of(context).showSnackBar(invalidQr);
+        }
+      }
+      if (_scanned) {
+        if (qrCode.replaceFirst('resign', '') ==
+            this.qrCode.replaceFirst('assign', '')) {
+          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+          _scanned = false;
+        } else {
+          ScaffoldMessenger.of(context).showSnackBar(wrongQr);
+        }
+      }
+      print(qrCode);
     });
   }
 
@@ -72,15 +90,16 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             // mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              TextButton(
-                onPressed: () => scanQRCode(),
-                child: Image(
-                  image: AssetImage('lib/image/scan-button.png'),
-                ),
+              IButtonWidget(
+                imagepath: 'lib/image/scan-button.png',
+                onClicked: () => scanQRCode(),
+              ),
+              SizedBox(
+                height: 50,
               ),
               Visibility(
                 child: Text(
-                  'Scan the QR code to assign your parking spot.',
+                  'Click here\n to scan the QR Code',
                   style: TextStyle(fontSize: 30),
                   textAlign: TextAlign.center,
                 ),
