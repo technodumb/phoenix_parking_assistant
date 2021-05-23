@@ -64,7 +64,7 @@ class DetailsPage extends StatelessWidget {
               ],
             ),
             ButtonWidget(
-              text: 'Scan ',
+              text: 'Go Back',
               onClicked: () => Navigator.pop(context),
             )
           ],

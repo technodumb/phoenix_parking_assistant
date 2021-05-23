@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "phoenix-sheets-314606",
+  "private_key_id": "444c1242ea5a0711195424e96109c5a37e3d0af8",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCfGPIktKwCRyGs\nC58XMr0Knz6u989nLM19dfKiG5o5UpNP5DfEv0NtW78nTItxf1D6UI5/q05plWJG\nfAkjgMq5ClRnxRLTot5Gv9Dy5KtqH3+p5VQKQT4D/rC0wy2fO/pARGbpvg7VeW4p\nR+wGBtpwkKSVZgqR6vd73ZLTOD0LX6/1tSW7UOANrOPMzMhbFKTHdXis0XU6t9kr\nwwj0RmVEM/E00jYfQW/pWNvLWNR/RFn1jm6lBxJv8hmAQ+t0ySO5MlxNEr/SE4Tx\nGDW13yqp4qCY19l3t4QbzaXiBuXWz0YTw6mxnohrQQvMjuuNUuuxNUwmSVm3ehNU\npTPsFLKPAgMBAAECggEAD6oAmT2Sm+zN82b3hGyx8RxJqydp67IdD0ewGmbWUeN/\n7oM9PGlKZbd9RAzEw+lxmxuYVBiVMU8MbH0k1zKEgyBxu//KwTyNXvDezTNXbyzn\nwF38XsAar4EBe+KlmMJqeq5hZY0ZX8pDXtwecF93XVLYaX8w9jnooPDpVlN4qyha\nULJxDz8a0PmCWChpnz4LAVCIx9mNUIOTdymshhc0h/P2oU9vpRgrODA7LveS0qnx\nv93jHcUVfV4vtITflb3X7dEHjM+gs9HWhZIk5fV/zn2Jw8DU7OkQzJRMU8A7+0xs\nuNcpBwPdk0EWYPH7oyOPXgIVo+egT3XJK7sArCQ/TQKBgQDYLPwN5Yopab4s7TqF\npNh1ir/jH8PeZEDTzDUFGlEJVkX7IbfBhF5wXhJ8qXYO2DyII7BEi0AUYjJVOqxz\n7lkhYDiO+MBXN49k4ISwOXRycJrjaRFNLlgEZj5sqinT7aS9lP+Jg7+PoWRRoxIS\nWz+eZctOCZgz8lnZ8fK9SA9fHQKBgQC8aBr1xFpCtUwJOyZaxLCeluNTPVVu7CvW\nqrZvnebklQTjyyu3N6XyTGSHg2A2I+VEOpVXrjYwmdpOWden+6ioW/4hw10o7ZK7\nVa7HcNsWVQnqe7+eIWvPOyjd7NYoSTO8owiHpLhnky8qZmnXTmUrjHZdfXeroOYx\n5/8ofvfMmwKBgAYOXJFXGOPIHpfLnZQY5ieE15NZVHdqf5ZvZhzae+KzFArRCwDU\n4IBtYj8z0CbiT+/QcCO7cvQfPCG/Hw2wY7bXpz36IglPeSjuUUlOksCR/wTX8LAk\n2DpnUuBgdAOH6NGW1wHXOwqfDtxqoRr6i3G4kFWDV0w9Qd8lNBOxbRzRAoGAPtfq\nxjdsc/vNFPcp3/TjhMKHqOg4avtT1BK1L53Xuj8KloDaYA6rx5o7ngfwO57VhmCU\nF98ALE3lR2UoTdvfcejdZ52moVQ9MUdvOQ8nxNcwq4oDbFdxgnoVM5EgDef83drz\nqWsEJ2gsv1PR0gNQM6pygNSs6g6NOfBMZ9GSDikCgYAyEpHAbAunGZJxBEMoMHSl\nKslXkSnEJ7OYtStnsVwDipiv27HMEd31lt6MWPOOq/j+NVz9Uowohesoh1Xl4J/M\nhnEq1CuvVjzL9fIG6EsTzFFORJ8QLbIdNJX58XZdbTg7Nsnbr7WostLsZeGFgcM0\nuyjBd7Gg1jsczHPQdC5eXQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "phonix-g-sheet@phoenix-sheets-314606.iam.gserviceaccount.com",
+  "client_id": "105027943919567441163",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/phonix-g-sheet%40phoenix-sheets-314606.iam.gserviceaccount.com"
+}
